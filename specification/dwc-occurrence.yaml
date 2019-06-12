@@ -1,0 +1,16 @@
+# Dataset: natagora-alien-occurrences
+# DOI: 
+# 
+# Scope: dwc-occurrence
+# Author: Lien Reyserhove
+# Syntax version: 0.1
+
+occurrenceID:
+  regex: 'Natagora:Observations:\d+'
+  # Has to be unique as well
+
+type:
+  allowed: Event
+
+language:
+  allowed: en
