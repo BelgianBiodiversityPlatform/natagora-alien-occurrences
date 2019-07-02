@@ -88,8 +88,8 @@ select	w.id, wg.id wg_id,
 	typeAct.id typeActID, 
 	case 	when typeAct.id in (1,15,17,18,19,20,21,23,24,26,27,32,38,39,40,41,51,52,57,58,65,66,67,68,69,70,78,79,82,94,
 				95,96,97,98,2002,2005,2010,2016,2019,2021,2023,2024,2026,2030,2032,2033,2035,2036,3007,3019,
-				3020,3028,3029,3030,3036,3039,3040,3051,3052,3053,3064,3066,3067,3069,3073,3074,3075,3077,3092,
-				3099,3100,3104,3106,3108,3114,3115,3117,3120,3121,3122,3135,3136,3137,3138,3140,3142,3143,3144,
+				3020,3028,3029,3030,3036,3039,3040,3051,3052,3053,3064,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3077,3078,3079,3092,
+				3099,3100,3104,3106,3108,3114,3115,3117,3120,3121,3122,3135,3136,3137,3138,3140,3141,3142,3143,3144,
 				3146,3147,3148,3149,3150,3151,3154,3160,3161,3163,3164,3165,3166,3173,3174,3175,3177,3194,3195,
 				3212,3217,3219,3237,3242,3247,3250,3254,3256,3257) then null
 		when typeAct.id in (2,16,3180,3181,3184,3185,3187,3188,3189,3190,3191) then 'feeding'
@@ -146,7 +146,7 @@ select	w.id, wg.id wg_id,
 		when typeAct.id in (39) then 'catch by net'
 		when typeAct.id in (40) then 'catch by electrofishing'
 		when typeAct.id in (58) then 'catch by sheer'
-		when typeAct.id in (3066,3067,3069,3073,3074,3075,3077,3164) then 'specimen collected'
+		when typeAct.id in (3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3077,3078,3079,3141,3164) then 'specimen collected'
 		when typeAct.id in (3137) then 'catch by fishermen'
 		when typeAct.id in (3142) then 'snorkelling observation'
 		when typeAct.id in (3173) then 'catch and removed'
@@ -158,8 +158,8 @@ select	w.id, wg.id wg_id,
 	case	when typeAct.id in (1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,19,20,24,25,27,28,29,30,31,32,33,37,38,39,40,41,51,58,
 				64,66,68,69,71,72,77,80,81,82,84,90,93,94,95,96,97,98,2009,2010,2012,2022,2027,2028,2029,2030,
 				3001,3009,3011,3012,3013,3014,3017,3021,3022,3023,3024,3027,3028,3031,3032,3034,3037,3043,3047,
-				3056,3057,3064,3066,3067,3069,3073,3074,3075,3077,3087,3093,3094,3095,3096,3104,3108,3110,3116,
-				3118,3119,3124,3135,3136,3137,3140,3142,3143,3151,3152,3155,3157,3158,3160,3163,3164,3166,3173,
+				3056,3057,3064,3066,3067,3068,3069,3070,3071,3072,3073,3074,3075,3076,3077,3078,3079,3087,3093,3094,3095,3096,3104,3108,3110,3116,
+				3118,3119,3124,3135,3136,3137,3140,3141,3142,3143,3151,3152,3155,3157,3158,3160,3163,3164,3166,3173,
 				3174,3177,3180,3181,3184,3185,3187,3188,3189,3190,3191,3192,3193,3194,3196,3197,3198,3199,3212,
 				3218,3219,3220,3222,3227,3236,3237,3239,3240,3241,3242,3244,3246,3249,3250,3252,3254,3255,3256,
 				3257,3267) then null
@@ -281,8 +281,8 @@ select	w.id, wg.id wg_id,
 	end	as kleed_dynamicproperties,
 
 	typeM.id TypeMid,
-	case 	when typeM.id in (1,27,32,34,42,47,48,49,51,102,107,109,119,122,123,124,126,127,132,147,148,149,151,152,
-				172,173,198,218,222,223,227,247,248,252,268,272,273,277,297,298,343,393,397,398,399,402,
+	case 	when typeM.id in (1,7,27,32,34,42,47,48,49,51,102,107,109,119,122,123,124,126,127,132,147,148,149,151,152,157,
+				172,173,198,218,222,223,227,247,248,252,257,268,272,273,277,297,298,307,332,343,357,393,397,398,399,402,407,
 				422,423,424,426,447,448,472,473,474,497,498,522,523,568,572,573,585,586,587,588,589,590,
 				596,597,598,599,602,603,605,623,627,633,634,635,636,638,642,643,653,656,657,658,662,663,679,
 				680,681,685,687,688,693,694,703,704,705,707,709,713,714,715,716,717,719,720,724,725,726,727,
@@ -300,7 +300,7 @@ select	w.id, wg.id wg_id,
 	case 	when typeM.id in (1,47,122,147,172,218,222,232,247,268,272,297,333,343,382,393,397,422,432,447,457,472,482,497,
 				522,557,568,572,579,591,592,593,594,595,600,607,608,638,639,648,654,665,675,691,723,741,769) then 'casual observation'
 		when typeM.id in (27,102,127,152,227,252,277,402) then 'catch'
-		when typeM.id in (32,107,132) then 'specimen collected'		
+		when typeM.id in (7,32,107,132,157,257,307,332,357,407) then 'specimen collected'	
 		when typeM.id in (34,109) then 'telemetry searching'
 		when typeM.id in (42) then 'DNA barcoding'
 		when typeM.id in (48,123,148,173,198,223,248,273,298,398,423,448,473,498,523,573) then 'seen'
@@ -408,16 +408,18 @@ create table trias.result as
 select 	case when wt.wg_id is null then 'Natagora:Observations:'||wt.id
 	else 'Natagora:Observations:'||wt.id||':'||wt.wg_id 
 	end occurrenceID, 'Event'::varchar as type, --date(timestamp) modified, 
-	'en'::char as language, 'http://creativecommons.org/publicdomain/zero/1.0/'::varchar as license,
+	'en'::varchar as language, 'http://creativecommons.org/publicdomain/zero/1.0/'::varchar as license,
 	'Natagora'::varchar rightsHolder, 'https://www.natagora.be/donnees_naturalistes_usage'::varchar as accessRights, 
 	'https://observations.be/waarneming/view/'::varchar||wt.id as references,
-	''::varchar as datasetID,
-	'Natagora'::varchar as institutionCode, 'Observations.be - Non-native animal occurrences in Wallonia, Belgium'::varchar as datasetName,
+	'https://doi.org/10.15468/p58ip1'::varchar as datasetID,
+	'Natagora'::varchar as institutionCode, 'Observations.be - Non-native species occurrences in Wallonia, Belgium'::varchar as datasetName,
 	case when TypeMid in (587,588,596,597) then 'MachineObservation'::varchar
 	else 'HumanObservation'::varchar end basisOfRecord, 'see metadata'::varchar informationWithheld,
-	case when embargo_datum > now() AND push_embargo = 1 
-		then 'coordinates are generalized to a 4x4km IFBL grid'::varchar	
-		else ''::varchar
+	case kmvervaagd
+	when 1 then 'coordinates are generalized to a 4x4km IFBL grid'::varchar
+	when 0 then ''::varchar
+	/*embargo_datum > now() AND push_embargo = 1 */
+		
 	end as dataGeneralizations,
 	aantal individualCount, 				 
 	(case when geslacht ilike 'man' then 'male'
@@ -426,7 +428,7 @@ select 	case when wt.wg_id is null then 'Natagora:Observations:'||wt.id
 	     else ''::varchar
 	  end) as sex,
 
-	kleed_LifeStage as LifeStage, act_behavior as behaviour,
+	kleed_LifeStage as LifeStage, act_behavior as behavior,
 	concat_ws(' | ', act_occRem, kleed_occrem, met_occRem) as occurrenceRemarks,
 	case 
 	   when act_samplingprotocol = met_samplingprotocol then met_samplingprotocol
@@ -446,7 +448,7 @@ select 	case when wt.wg_id is null then 'Natagora:Observations:'||wt.id
 --	kleed_LifeStage, kleed_OccRem, kleed_reproductiveCondition, kleed_dynamicproperties, -- test
 --	met_occRem, met_samplingprotocol, met_identificationremarks, -- test
 	to_char(datum, 'YYYY-MM-DD') eventDate,					
-	 'Europe'::varchar continent, 'BE'::char countryCode,
+	 'Europe'::varchar continent, 'BE'::varchar countryCode,
 	(case
 		when prov_id = 19 then 'Région de Bruxelles Capitale'
 		when prov_id = 22 then 'Liège'
@@ -486,19 +488,22 @@ select 	case when wt.wg_id is null then 'Natagora:Observations:'||wt.id
 	rights scientificNameAuthorship,			
 	naam_fr vernacularName,				
 	CASE ind_diergroep
-	WHEN 10 THEN 'ICN'::char -- plants
-	WHEN 11 THEN 'ICN'::char -- fungi
-	ELSE 'ICZN'::char 
+	WHEN 10 THEN 'ICN'::varchar -- plants
+	WHEN 11 THEN 'ICN'::varchar -- fungi
+	ELSE 'ICZN'::varchar 
 	END as nomenclaturalCode
 -- maybe to use in certain cases
 --	,wnr, wnr_id
 		
 from	trias.werktabel wt
 
-where 	case	when toestemming_wnr in (4) then true	-- "open data" users give all their data
+where 	case	
+/* when kmvervaagd = 1 then false*/
+
+when toestemming_wnr in (4) then true	-- "open data" users give all their data
 	else
 		case when toestemming_wnr in (2,3) then 
-			case when embargo_datum >  now() AND push_embargo = 0 
+			case when embargo_datum >  now() /*AND push_embargo = 0 */
 				then false
 			    else true 
 			end
