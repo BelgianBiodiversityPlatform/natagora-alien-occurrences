@@ -5,9 +5,11 @@ It has been developed in the context of the TrIAS project.
 
 ## Workflow
 - Natagora: observations.be dump -> csv file (DaRWINCore)
-- Natagora/INBO: csv file -> https://ipt.biodiversity.be
+- Natagora/INBO: csv file -> https://ipt.biodiversity.be/manage/resource?r=natagora-alien-occurrences
 
-The first conversion is done using the SQL code file in present [sql](/trias-project/natagora-alien-occurrences/tree/master/sql) directory.
+The first conversion is done using the SQL code file in present [sql](https://github.com/trias-project/natagora-alien-occurrences/tree/master/sql) directory.
+
+This workflow is run every six months.
 
 ## Published dataset
 
