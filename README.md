@@ -7,7 +7,7 @@ It has been developed in the context of the TrIAS project.
 - Natagora: observations.be dump -> csv file (DaRWINCore)
 - Natagora/INBO: csv file -> https://ipt.biodiversity.be
 
-The first conversion is done using the SQL code file in present src directory.
+The first conversion is done using the SQL code file in present [sql](/trias-project/natagora-alien-occurrences/tree/master/sql) directory.
 
 ## Published dataset
 
