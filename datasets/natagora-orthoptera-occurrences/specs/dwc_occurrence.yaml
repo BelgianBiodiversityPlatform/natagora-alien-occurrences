@@ -1,0 +1,193 @@
+# Dataset: natagora-orthoptera-occurrences
+# DOI: https://doi.org/10.15468/r763pb
+# 
+# Scope: dwc-occurrence
+# Author: Peter Desmet
+# Syntax version: 0.1
+
+id:
+  regex: 'Natagora:Observations(:\d+)+' # Same as occurrenceID
+
+occurrenceID:
+  regex: 'Natagora:Observations(:\d+)+'
+
+type:
+  allowed: Event
+
+language:
+  allowed: en
+
+license:
+  allowed: https://creativecommons.org/publicdomain/zero/1.0/
+
+rightsHolder:
+  allowed: Natagora
+
+accessRights:
+  allowed: https://www.natagora.be/donnees_naturalistes_usage
+
+references:
+  regex: 'https:\/\/observations\.be\/observation\/(\d)+'
+
+datasetID:
+  allowed: https://doi.org/10.15468/r763pb
+
+institutionCode:
+  allowed: Natagora
+
+datasetName:
+  allowed: Observations.be - Orthoptera occurrences in Wallonia, Belgium
+
+basisOfRecord:
+  allowed: HumanObservation
+
+informationWithheld:
+  allowed: see metadata
+
+dataGeneralizations:
+  empty: true
+  allowed: coordinates are generalized to a 4x4km IFBL grid
+
+individualCount:
+  numberformat: x
+  min: 1
+  max: 1001
+
+sex:
+  empty: true
+  allowed: [female, female & male, male]
+
+lifeStage:
+  empty: true
+  allowed: [adult, egg, larva]
+
+behavior:
+  empty: true
+  allowed:
+    - attracted to light
+    - copulating
+    - feeding # Not in dataset
+    - hibernating
+    - laying egg
+    - parasitized
+    - stridulating # Used instead of calling/singing
+    - sun basking
+
+occurrenceRemarks:
+ empty: true
+ delimitedvalues:
+    delimiter: ' | '
+    allowed:
+      - brachypterous
+      - deviant form
+      - found as exuviae
+      - found as nest
+      - found as tracks # Not in dataset
+      - found dead
+      - freshly moulted
+      - grown and released
+      - macropterous
+      - road kill
+
+samplingProtocol:
+  allowed:
+  - casual observation
+  - catch
+  - heard
+  - light trap
+  - malaise trap
+  - observation with bat detector
+  - pitfall trap
+  - seen
+  - seen and heard
+  - seen indoors
+  - specimen collected
+  - sugar bait
+  - unspecified trap # Not in dataset
+
+eventDate:
+  dateformat: ['%Y-%m-%d'] # YYYY-MM-DD
+  mindate: 1987-08-30
+  maxdate: 2018-12-05
+
+continent:
+  allowed: Europe
+
+countryCode:
+  allowed: BE
+
+stateProvince:
+  allowed: [Hainaut, Liège, Luxembourg, Namur, Walloon Brabant]
+
+municipality:
+  empty: false
+
+# verbatimCoordinates:
+#   regex: '31U[D-G][S-T]\d\d[A-D]' # UTM 5km for Flanders
+
+# verbatimCoordinateSystem:
+#   allowed: UTM 5km
+
+# verbatimSRS:
+#   allowed: WGS84
+
+decimalLatitude:
+  numberformat: '.5'
+  min: 49.49
+  max: 50.82
+
+decimalLongitude:
+  numberformat: '.5'
+  min: 2.84
+  max: 6.41
+
+geodeticDatum:
+  allowed: WGS84
+
+coordinateUncertaintyInMeters:
+  if:
+    - dataGeneralizations:
+        allowed: coordinates are generalized to a 4x4km IFBL grid
+      allowed: '2828' # Radius of circle encompassing 4x4km grid
+  min: 5
+  max: 2828
+
+georeferenceRemarks:
+  if:
+    - dataGeneralizations:
+        allowed: coordinates are generalized to a 4x4km IFBL grid
+      allowed: 'coordinates are centroid of used grid square'
+  empty: true
+
+identificationVerificationStatus:
+  allowed: [approved on expert judgement, approved on knowledge rules, approved on photographic evidence, unverified]
+
+taxonID:
+  regex: 'https:\/\/observations\.be\/species\/(\d)+'
+
+scientificName:
+  empty: false
+
+kingdom:
+  allowed: Animalia
+
+phylum:
+  allowed: Arthropoda
+
+class:
+  allowed: Insecta
+
+order:
+  allowed: Orthoptera
+
+taxonRank:
+  allowed: [species, multispecies]
+
+scientificNameAuthorship:
+  empty: true
+
+vernacularName:
+  empty: true
+
+nomenclaturalCode:
+  allowed: ICZN
