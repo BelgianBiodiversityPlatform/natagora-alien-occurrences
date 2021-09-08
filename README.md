@@ -35,6 +35,17 @@ The structure for each dataset in [datasets](datasets) is based on [Cookiecutter
 
 These are shared with the [waarnemingen.be datasets](https://www.gbif.org/dataset/search?q=waarnemingen.be).
 
+## Validating with whip
+
+Published data can be validated with [whip](https://github.com/inbo/whip):
+
+1. Download the published DwC Archive from the IPT
+2. Unzip the data in the directory `data` (git ignored), so data are available at `data/data_file.txt`
+3. In terminal, start `jupyter notebook` from the repository root
+4. Open `notebooks/whip.ipynb`
+5. In the notebook, set the correct paths at the top of the file
+6. Run the notebook
+
 ## Contributors
 
 [List of contributors](https://github.com/trias-project/natagora-occurrences/contributors)
