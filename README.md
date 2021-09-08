@@ -45,6 +45,7 @@ Published data can be validated with [whip](https://github.com/inbo/whip):
 4. Open `notebooks/whip.ipynb`
 5. In the notebook, set the correct paths at the top of the file
 6. Run the notebook
+7. Update dataset or specifications until they align
 
 ## Contributors
 
