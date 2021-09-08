@@ -46,7 +46,7 @@ informationWithheld:
 
 dataGeneralizations:
   empty: true
-  allowed: coordinates are generalized to a 4x4km IFBL grid
+  allowed: coordinates are generalized to a 4x4km IFBL grid # The case for 4% of the dataset
 
 individualCount:
   numberformat: x
@@ -55,11 +55,17 @@ individualCount:
 
 sex:
   empty: true
-  allowed: [female, female & male, male]
+  allowed:
+    - female
+    - male
+    - female & male
 
 lifeStage:
   empty: true
-  allowed: [adult, egg, larva]
+  allowed:
+    - adult
+    - egg
+    - larva
 
 behavior:
   empty: true
@@ -117,19 +123,15 @@ countryCode:
   allowed: BE
 
 stateProvince:
-  allowed: [Hainaut, Liège, Luxembourg, Namur, Walloon Brabant]
+  allowed: 
+    - Hainaut
+    - Liège
+    - Luxembourg
+    - Namur
+    - Walloon Brabant
 
 municipality:
   empty: false
-
-# verbatimCoordinates:
-#   regex: '31U[D-G][S-T]\d\d[A-D]' # UTM 5km for Flanders
-
-# verbatimCoordinateSystem:
-#   allowed: UTM 5km
-
-# verbatimSRS:
-#   allowed: WGS84
 
 decimalLatitude:
   numberformat: '.5'
@@ -160,7 +162,11 @@ georeferenceRemarks:
   empty: true
 
 identificationVerificationStatus:
-  allowed: [approved on expert judgement, approved on knowledge rules, approved on photographic evidence, unverified]
+  allowed:
+    - approved on expert judgement
+    - approved on knowledge rules
+    - approved on photographic evidence
+    - unverified
 
 taxonID:
   regex: 'https:\/\/observations\.be\/species\/(\d)+'
@@ -181,7 +187,9 @@ order:
   allowed: Orthoptera
 
 taxonRank:
-  allowed: [species, multispecies]
+  allowed:
+    - species
+    - multispecies
 
 scientificNameAuthorship:
   empty: true
