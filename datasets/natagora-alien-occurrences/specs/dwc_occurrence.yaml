@@ -1,16 +1,358 @@
 # Dataset: natagora-alien-occurrences
-# DOI: 
+# DOI: https://doi.org/10.15468/p58ip1
 # 
 # Scope: dwc-occurrence
-# Author: Lien Reyserhove
+# Author: Peter Desmet
 # Syntax version: 0.1
+
+id:
+  regex: 'Natagora:Observations(:\d+)+' # Same as occurrenceID
 
 occurrenceID:
   regex: 'Natagora:Observations:\d+'
-  # Has to be unique as well
 
 type:
   allowed: Event
 
 language:
   allowed: en
+
+license:
+  allowed: https://creativecommons.org/publicdomain/zero/1.0/
+
+rightsHolder:
+  allowed: Natagora
+
+accessRights:
+  allowed: https://www.natagora.be/donnees_naturalistes_usage
+
+references:
+  regex: 'https:\/\/observations\.be\/observation\/(\d)+'
+
+datasetID:
+  allowed: https://doi.org/10.15468/p58ip1
+
+institutionCode:
+  allowed: Natagora
+
+datasetName:
+  allowed: Observations.be - Non-native species occurrences in Wallonia, Belgium
+
+basisOfRecord:
+  allowed: HumanObservation
+
+informationWithheld:
+  allowed: see metadata
+
+# dataGeneralizations:
+# Data have point coordinates and are no longer generalized
+
+individualCount:
+  numberformat: x
+  min: 1
+  max: 1000
+
+sex:
+  empty: true
+  allowed:
+    - female
+    - male
+    - female & male
+
+lifeStage:
+  empty: true
+  allowed:
+    - adult
+    - caterpillar
+    - chick
+    - egg
+    - juvenile
+    - larva
+    - pupa
+
+reproductiveCondition:
+  empty: true
+  allowed:
+    - dead aboveground material # Not in dataset
+    - flowering # Not in dataset
+    - fruit-bearing
+    - pregnant
+    - queen # Not in dataset
+    - reproductive
+    - seedling
+    - spore-bearing
+    - sprouting # Not in dataset
+    - unwinged gyne # Not in dataset
+    - vegetative
+    - winged gyne # Not in dataset
+    - worker
+
+behavior:
+  empty: true
+  allowed:
+    - aestivating
+    - alarming
+    - attracted to light
+    - calling
+    - copulating
+    - courtship/mating
+    - distraction display
+    - emerging at dusk
+    - feeding
+    - flushing
+    - flying
+    - hibernating
+    - hunting
+    - lactating # Not in dataset
+    - laying egg
+    - mating
+    - migrating
+    - migrating east
+    - migrating north
+    - migrating northeast
+    - migrating northwest
+    - migrating south
+    - migrating southeast
+    - migrating southwest
+    - migrating west
+    - moulting
+    - moving east
+    - moving north
+    - moving south
+    - moving west
+    - nest building
+    - parasitized
+    - parasitizing # Not in dataset
+    - passing by # Not in dataset
+    - resting
+    - singing
+    - social behavior
+    - spawning
+    - sun basking
+    - swarming # Not in dataset
+    - swimming
+    - territorial behavior
+    - transporting feed or faeces
+
+occurrenceRemarks:
+  empty: true
+  delimitedvalues:
+    delimiter: ' | '
+    allowed:
+      - 1st autumn plumage
+      - 1st cycle plumage
+      - 1st summer plumage
+      - 1st winter plumage
+      - 1st year plumage
+      - 2nd cycle plumage
+      - 2nd summer plumage
+      - 2nd winter plumage # Not in dataset
+      - 3rd cycle plumage
+      - 3rd winter plumage
+      - 4th cycle plumage # Not in dataset
+      - abandoned nest
+      - accidentally introduced
+      - adult in territory
+      - at sleeping area
+      - brachypterous # Not in dataset
+      - carrying eggs externally # Not in dataset
+      - catch by cat
+      - colony
+      - colony in trees
+      - colony on building # Not in dataset
+      - deviant form
+      - drowning victim
+      - eclipse plumage
+      - escaped
+      - farmed # Not in dataset
+      - found as case # Not in dataset
+      - found as cocoon # Not in dataset
+      - found as cuticle
+      - found as destroyed nest # Not in dataset
+      - found as egg mass
+      - found as empty fruit # Not in dataset
+      - found as excrements
+      - found as exuviae # Not in dataset
+      - found as feeding signs
+      - found as fossile # Not in dataset
+      - found as gall
+      - found as nest
+      - found as shell
+      - found as shell with remains # Not in dataset
+      - found as shield # Not in dataset
+      - found as silk nest # Not in dataset
+      - found as substrate with miner damage
+      - found as tracks
+      - found dead
+      - found in drain # Not in dataset
+      - found in trush smithy # Not in dataset
+      - freshly moulted # Not in dataset
+      - fruiting body # Not in dataset
+      - grown # Not in dataset
+      - grown and in collection # Not in dataset
+      - grown and released # Not in dataset
+      - in bud # Not in dataset
+      - in collection
+      - in web # Not in dataset
+      - injured
+      - longterm stay
+      - macropterous
+      - maternity colony # Not in dataset
+      - metamorphosing # Not in dataset
+      - micropterous # Not in dataset
+      - mixed tandem # Not in dataset
+      - near nest
+      - occupied nest
+      - occupied nest with eggs
+      - occupied nest with young
+      - on drifting object # Not in dataset
+      - pair in territory
+      - planted
+      - powerline victim # Not in dataset
+      - probably nesting place
+      - propagule # Not in dataset
+      - recently hatched young
+      - recently used nest
+      - road kill
+      - seen while diving # Not in dataset
+      - sown
+      - sprouting # Not in dataset
+      - summer plumage
+      - tagged
+      - teleomorph # Not in dataset
+      - washed ashore
+      - windfarm victim # Not in dataset
+      - window victim
+      - winter plumage
+      - with brood patch
+      - with color ring
+
+samplingProtocol:
+  empty: false
+  allowed:
+    - camera trap
+    - casual observation
+    - catch
+    - catch and removed # Not in dataset
+    - catch by electrofishing
+    - catch by fishermen # Not in dataset
+    - catch by fishing rod
+    - catch by hand
+    - catch by hand and collected
+    - catch by hand and released
+    - catch by net
+    - catch by pod # Not in dataset
+    - catch by pole
+    - catch by screen
+    - catch by sheer # Not in dataset
+    - catch by shrimp net # Not in dataset
+    - catch by trawl net # Not in dataset
+    - colour trap
+    - corrugated plate # Not in dataset
+    - deep drilling # Not in dataset
+    - DNA barcoding # Not in dataset
+    - heard
+    - light trap
+    - malaise trap # Not in dataset
+    - observation with bat detector
+    - observation with flashlight
+    - observation with hydrophone # Not in dataset
+    - pellet examination
+    - pheromones bait # Not in dataset
+    - pitfall trap # Not in dataset
+    - seen
+    - seen and heard
+    - seen indoors
+    - sheet with light # Not in dataset
+    - snorkelling observation # Not in dataset
+    - soil sample
+    - sound trap
+    - specimen collected
+    - spotlight
+    - sugar bait # Not in dataset
+    - telemetry searching
+    - track bed
+    - unspecified trap
+
+eventDate:
+  dateformat: ['%Y-%m-%d'] # YYYY-MM-DD
+  mindate: 1924-07-24 # Considered OK
+  # maxdate: Republished every month
+
+continent:
+  allowed: Europe
+
+countryCode:
+  allowed: BE
+
+stateProvince:
+  allowed: 
+    - Hainaut
+    - Liège
+    - Luxembourg
+    - Namur
+    - Walloon Brabant
+
+municipality:
+  empty: false
+
+decimalLatitude:
+  numberformat: '.5'
+  min: 49.49
+  max: 50.82
+
+decimalLongitude:
+  numberformat: '.5'
+  min: 2.84
+  max: 6.41
+
+geodeticDatum:
+  allowed: WGS84
+
+coordinateUncertaintyInMeters:
+  empty: false
+  numberformat: x
+  min: 1
+  max: 1000
+
+identificationVerificationStatus:
+  allowed:
+    - approved on expert judgement
+    - approved on knowledge rules
+    - approved on photographic evidence
+    - unverified
+
+identificationRemarks:
+  empty: true
+  allowed: microscopic examination
+
+taxonID:
+  regex: 'https:\/\/observations\.be\/species\/(\d)+'
+
+scientificName:
+  empty: false
+
+kingdom:
+  allowed:
+    - Animalia
+    - Plantae
+    - Fungi
+
+taxonRank:
+  allowed:
+    - species
+    - subspecies
+    - variety
+    - forma
+    - cultivar
+    - multispecies
+    - hybrid
+
+scientificNameAuthorship:
+  empty: true
+
+vernacularName:
+  empty: true
+
+nomenclaturalCode:
+  allowed: ICBN
