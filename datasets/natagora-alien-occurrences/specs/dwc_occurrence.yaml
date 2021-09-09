@@ -9,7 +9,7 @@ id:
   regex: 'Natagora:Observations(:\d+)+' # Same as occurrenceID
 
 occurrenceID:
-  regex: 'Natagora:Observations:\d+'
+  regex: 'Natagora:Observations(:\d+)+'
 
 type:
   allowed: Event
@@ -39,18 +39,37 @@ datasetName:
   allowed: Observations.be - Non-native species occurrences in Wallonia, Belgium
 
 basisOfRecord:
-  allowed: HumanObservation
+  allowed: [HumanObservation, MachineObservation]
+  if:
+    - samplingProtocol:
+        allowed: [camera trap, sound trap]
+      allowed: MachineObservation
 
 informationWithheld:
   allowed: see metadata
 
+dataGeneralizations:
+  empty: true
+  allowed: coordinates are generalized to a 4x4km IFBL grid # The case for 2% of the dataset
+
 # dataGeneralizations:
 # Data have point coordinates and are no longer generalized
+
+dynamicProperties:
+  empty: true
+  allowed:
+    - length < 2cm
+    - length 3-5cm
+    - length 6-10cm
+    - length 11-15cm
+    - length 16-25cm
+    - length 26-40cm
+    - length >41cm
 
 individualCount:
   numberformat: x
   min: 1
-  max: 1000
+  max: 1000000 # Considered OK
 
 sex:
   empty: true
@@ -168,7 +187,7 @@ occurrenceRemarks:
       - found as case # Not in dataset
       - found as cocoon # Not in dataset
       - found as cuticle
-      - found as destroyed nest # Not in dataset
+      - found as destroyed nest
       - found as egg mass
       - found as empty fruit # Not in dataset
       - found as excrements
@@ -313,7 +332,18 @@ coordinateUncertaintyInMeters:
   empty: false
   numberformat: x
   min: 1
-  max: 1000
+  max: 9363
+  if:
+    - dataGeneralizations:
+        allowed: coordinates are generalized to a 4x4km IFBL grid
+      allowed: '2828'
+
+georeferenceRemarks:
+  if:
+    - dataGeneralizations:
+        allowed: coordinates are generalized to a 4x4km IFBL grid
+      allowed: 'coordinates are centroid of used grid square'
+  empty: true
 
 identificationVerificationStatus:
   allowed:
@@ -344,7 +374,7 @@ taxonRank:
     - subspecies
     - variety
     - forma
-    - cultivar
+    - cultivar # Not in dataset
     - multispecies
     - hybrid
 
@@ -355,4 +385,11 @@ vernacularName:
   empty: true
 
 nomenclaturalCode:
-  allowed: ICBN
+  allowed: [ICBN, ICN]
+  if:
+    - kingdom:
+        allowed: Animalia
+      allowed: ICZN
+    - kingdom:
+        allowed: [Plantae, Fungi]
+      allowed: ICN
