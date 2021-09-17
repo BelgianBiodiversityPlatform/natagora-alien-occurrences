@@ -293,6 +293,7 @@ samplingProtocol:
     - spotlight
     - sugar bait # Not in dataset
     - telemetry searching
+    - thermal imaging scope # Not in dataset
     - track bed
     - unspecified trap
 
