@@ -194,7 +194,7 @@ occurrenceRemarks:
       - found as excrements
       - found as exuviae # Not in dataset
       - found as feeding signs
-      - found as fossile # Not in dataset
+      - found as fossil # Not in dataset
       - found as gall
       - found as nest
       - found as shell
@@ -205,7 +205,7 @@ occurrenceRemarks:
       - found as tracks
       - found dead
       - found in drain # Not in dataset
-      - found in trush smithy # Not in dataset
+      - found in thrush smithy # Not in dataset
       - freshly moulted # Not in dataset
       - fruiting body # Not in dataset
       - grown # Not in dataset
@@ -286,7 +286,7 @@ samplingProtocol:
     - seen and heard
     - seen indoors
     - sheet with light # Not in dataset
-    - snorkelling observation # Not in dataset
+    - snorkeling observation # Not in dataset
     - soil sample
     - sound trap
     - specimen collected
