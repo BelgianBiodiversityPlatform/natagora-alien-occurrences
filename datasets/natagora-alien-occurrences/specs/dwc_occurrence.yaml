@@ -389,7 +389,7 @@ vernacularName:
   empty: true
 
 nomenclaturalCode:
-  allowed: [ICBN, ICN]
+  allowed: [ICZN, ICN]
   if:
     - kingdom:
         allowed: Animalia
