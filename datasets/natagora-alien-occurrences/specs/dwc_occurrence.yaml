@@ -173,6 +173,7 @@ occurrenceRemarks:
       - accidentally introduced
       - adult in territory
       - at sleeping area
+      - barbed wire victim
       - brachypterous # Not in dataset
       - carrying eggs externally # Not in dataset
       - catch by cat
@@ -225,6 +226,8 @@ occurrenceRemarks:
       - occupied nest with eggs
       - occupied nest with young
       - on drifting object # Not in dataset
+      - on feeding place # Not in dataset
+      - on or in breeding substrate # Not in dataset
       - pair in territory
       - planted
       - powerline victim # Not in dataset
